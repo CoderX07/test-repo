@@ -19,6 +19,6 @@ jobs:
     name: token
     runs-on: ubuntu-18.04
     env:
-      ENVIRONMENT: TOKEN
+      ENVIRONMENT: ${{ secrets.TOKEN }}
     steps:
-      - run: echo "${{ secrets[format('{0}', env.ENVIRONMENT)] }}"
+      - run: echo "${{ env.ENVIRONMENT }}"
