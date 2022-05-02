@@ -10,7 +10,7 @@ jobs:
  
     steps:
     - name: Make envfile
-      uses: CoderX07/test-repo@v1
+      uses: CoderX07/test-repo@v1.0.6
       with:
         envkey_DEBUG: false
         envkey_SOME_API_KEY: "123456abcdef"
