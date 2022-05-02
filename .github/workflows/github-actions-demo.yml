@@ -1,16 +1,21 @@
-name: GitHub Actions Demo
-on: [push]
+name: Create envfile
+
+on: [ push ]
+
 jobs:
-  Explore-GitHub-Actions:
+
+  create-envfile:
+ 
     runs-on: ubuntu-latest
-    environment: test
-    env:
-      ACCESS: ${{ secrets.TOKEN }}
+ 
     steps:
-      - name: "USING SECRETS"
-        run: echo "$ACCESS"
-      - name: 'Create env file'
-        run: |
-          touch .env
-          echo API_KEY=${{ secrets.API_KEY }} >> .env
-          cat .env
+    - name: Make envfile
+      uses: CoderX07/test-repo@v1.3
+      with:
+        envkey_DEBUG: false
+        envkey_SOME_API_KEY: "123456abcdef"
+        envkey_SECRET_KEY: ${{ secrets.TOKEN }}
+        some_other_variable: foobar
+        directory: <directory_name>
+        file_name: .env
+        fail_on_empty: false
