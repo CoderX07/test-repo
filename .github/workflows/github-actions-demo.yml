@@ -15,3 +15,10 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  token:
+    name: token
+    runs-on: ubuntu-18.04
+    env:
+      ENVIRONMENT: TOKEN
+    steps:
+      - run: echo ${{ secrets[format('{0}', env.ENVIRONMENT)] }}
