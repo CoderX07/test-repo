@@ -28,6 +28,6 @@ jobs:
       - name: Step 3 - Conditional GitHub Action (false)
         shell: bash
         env: 
-          WHO_TO_TRUST: ${{ secrets.SECRET_TOKEN }}
+          WHO_TO_TRUST: ${{ secrets.TOKEN }}
         if:  env.WHO_TO_TRUST != 'TrustNobody'
         run: echo "I was wrong thinking the GitHub secret was 'TrustNobody'!"
