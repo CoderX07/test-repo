@@ -21,4 +21,4 @@ jobs:
     env:
       ENVIRONMENT: TOKEN
     steps:
-      - run: echo ${{ secrets[format('{0}', env.ENVIRONMENT)] }}
+      - run: echo "${{ secrets[format('{0}', env.ENVIRONMENT)] }}"
