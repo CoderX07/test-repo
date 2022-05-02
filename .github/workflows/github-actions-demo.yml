@@ -7,6 +7,6 @@ jobs:
     - name: Check if environmental variable is true.
       env:
         TOKEN: ${{ secrets.TOKEN }}
-      if: env.TOKEN == '1135'
+      if: env.TOKEN == 1135
       run: echo "It works!!"
       
