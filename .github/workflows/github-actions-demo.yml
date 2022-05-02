@@ -14,14 +14,14 @@ jobs:
       - name: Step 1 - Echo out a GitHub Actions Secret to the logs
         run: |
           echo "The GitHub Action Secret will be masked:  "
-          echo ${{ secrets.SECRET_TOKEN }}
+          echo ${{ secrets.TOKEN }}
           echo "Trick to echo GitHub Actions Secret:  "
-          echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g' 
+          echo ${{secrets.TOKEN}} | sed 's/./& /g' 
       # Use a GitHub Actions secret variable in a bash shell
       - name: Step 2 - GitHub Action if statement (true)
         env: 
-          WHO_TO_TRUST: ${{ secrets.SECRET_TOKEN }}
-        if:  env.WHO_TO_TRUST == 'TrustNo1'
+          WHO_TO_TRUST: ${{ secrets.TOKEN }}
+        if:  env.WHO_TO_TRUST == '1135'
         run: echo "I know what the secret token is!"
 
       # A GitHub Actions if statement with a secret environment variable
